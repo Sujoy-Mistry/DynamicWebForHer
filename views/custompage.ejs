@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=IBM+Plex+Mono&family=Noto+Serif+JP:wght@200&family=Playfair+Display&family=Rubik+Broken+Fax&family=Single+Day&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modhu is Love</title>
+    <link rel="icon" href="https://media1.tenor.com/m/VSxlAnMklw0AAAAC/anime-hug-for-you.gif" type="image/gif">
+
+    <!-- Corrected Paths -->
+    <link rel="stylesheet" href="/plugins/styles.css">
+    <script defer src="/plugins/script.js"></script>
+    <script>
+        window.onload = function() {
+            var bgMusic = document.getElementById("bgMusic");
+            bgMusic.play();
+        }
+
+        function initiatePlayback() {
+            var bgMusic = document.getElementById("bgMusic");
+            if (bgMusic.paused) {
+                bgMusic.play();
+            } else {
+                bgMusic.pause();
+            }
+        }
+        window.onload = function() {
+            var bgMusic = document.getElementById("bgMusic");
+            bgMusic.play();
+        }
+
+        function initiatePlayback() {
+            var bgMusic = document.getElementById("bgMusic");
+            if (bgMusic.paused) {
+                bgMusic.play();
+            } else {
+                bgMusic.pause();
+            }
+        }
+
+        function captureDetails() {
+            // Get the values from the input fields
+            var name = document.getElementById('userName').value;
+            var message = document.getElementById('userMessage').value;
+            
+            // Update the note content dynamically
+            document.getElementById('note').innerHTML = 
+                "Hi " + name + "! " + message + "<br>Thanks for visiting <3";
+            
+            // Optionally clear the form after submission
+            document.getElementById('userDetailsForm').reset();
+        }
+    </script>
+</head>
+<body> 
+    <div class="loader">
+        <span class="loader__element"></span>
+        <span class="loader__element"></span>
+        <span class="loader__element"></span>
+    </div>
+
+    <div id="popupContainer">
+        <div id="popupContent">
+            <!-- <button id="closePopup">Close</button> Added text to close button -->
+            <h2>Words from <%= username%></h2>
+            <p id="note"> <%= userParagraph%>    
+            </p>
+        </div>
+    </div>
+
+    <button id="musicButton" onclick="initiatePlayback()">🔈</button>
+
+    <div id="heartRateControl">
+        <label for="heartRateSlider">Love-o-meter </label>
+        <input id="heartRateSlider" type="range" min="50" max="700" step="5" value="300" onchange="updateHeartRate()">
+    </div>
+
+    <!-- Corrected Paths -->
+    <audio id="bgMusic" loop hidden>
+        <source src="/assets/bg.mp3" type="audio/mp3">
+    </audio>
+    <audio id="popSound" hidden>
+        <source src="/assets/pop.mp3" type="audio/mp3">
+    </audio>
+
+    <div class="click-catcher"></div>
+
+    <header>
+        <h1 class="hero-text"></h1> <!-- Ensure this is filled dynamically -->
+        <p class="quote">Loading quote...</p>
+    </header>
+    
+    <canvas id="waterCanvas"></canvas>
+
+    <p class="love">Love - Sujoy</p>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=IBM+Plex+Mono&family=Noto+Serif+JP:wght@200&family=Playfair+Display&family=Rubik+Broken+Fax&family=Single+Day&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modhu is Love</title>
+    <link rel="icon" href="https://media1.tenor.com/m/VSxlAnMklw0AAAAC/anime-hug-for-you.gif" type="image/gif">
+
+    <link rel="stylesheet" href="./plugins/styles.css">
+    <script defer src="./plugins/script.js"></script>
+</head>
+<body> 
+    <div class="loader">
+        <span class="loader__element"></span>
+        <span class="loader__element"></span>
+        <span class="loader__element"></span>
+    </div>
+
+    <div id="popupContainer">
+        <div id="popupContent">
+            <button id="closePopup">close</button>
+            <h2>Words from Sujoy</h2>
+            <p id="note">Hi there! I'm Sujoy.This website was created purely out of love for my dear Modhu Sundari Devi. 
+                It's been created might be her beauty, might be her voice, or might be her personality.
+                This is, Umm... You could say that this is merely my way of expressing my affection for her. <br>
+                This Page may contain some of my literary works.
+                Thankyou for visiting<3    
+            </p>
+        </div>
+    </div>
+
+    <button id="musicButton" onclick="initiatePlayback()">🔈</button>
+
+    <div id="heartRateControl">
+        <label for="heartRateSlider">Love-o-meter </label>
+        <input id="heartRateSlider" type="range" min="50" max="700" step="5" value="300" onchange="updateHeartRate()">
+    </div>
+
+    <audio id="bgMusic" loop hidden><source src="/assets/bg.mp3" type="audio/mp3"></audio>
+    <audio id="popSound" hidden><source src="/assets/pop.mp3" type="audio/mp3"></audio>
+
+    <div class="click-catcher"></div>
+
+    <header>
+        <h1 class="hero-text"></h1>
+        <p class="quote">Loading quote...</p>
+    </header>
+    
+    <canvas id="waterCanvas"></canvas>
+
+    <!-- NEW FORM FOR CUSTOM PAGE GENERATION -->
+    <div id="customPageForm" style="display: none;">
+        <h2>Create Your Custom Page</h2>
+        <form action="/submit" method="POST">
+            <input type="text" id="usernameInput" name="username" placeholder="Enter your name" required>
+            <textarea name="userParagraph" id="messageInput" placeholder="Enter your paragraph" required></textarea>
+            <button type="submit">Generate Your Page</button>
+        </form>
+    </div>
+
+    <p class="love">Love - Sujoy</p>
+</body>
+</html>
